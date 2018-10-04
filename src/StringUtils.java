@@ -2,7 +2,7 @@ public class StringUtils {
     /**
      * makePurdueUsername -- <= 8-letter-long lowercase username creator
      * Usernames may be AT MOST 8 letters in length, and should
-     * consist of the first letter of one's first name, and the 
+     * consist of the first letter of one's first name, and the
      * amount of their last name that will fit into the remaining
      * 7 characters. All should be lowercase.
      * Ex: a = "Sean ", b = "Flannery", returns "sflanner"
@@ -17,12 +17,14 @@ public class StringUtils {
             Ex: res = "SFlannery"
                     --> res = "SFlanner"
          */
-        res.substring(0, 8);
+        if(res.length() > 7) {
+            res = res.substring(0, 8);
+        }
         /* Convert the name to lower-case
             Ex: res = "SFlanner"
                     --> res = "sflanner"
          */
-        res.toLowerCase();
+        res = res.toLowerCase();
         /* return the result of our calculation */
         return res;
     }
@@ -36,6 +38,6 @@ public class StringUtils {
      */
     public static String replaceStudentUsername(String text, String username) {
         /* Replace every instance of the username with proper message */
-        return text.replaceAll(username, "[DATA EXPUNDGED]");
+        return text.replaceAll(username, "[DATA EXPUNGED]");
     }
 }
